@@ -3,7 +3,6 @@ filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 Plugin 'vcscommand.vim'
 Plugin 'kien/ctrlp.vim'
@@ -16,6 +15,9 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/syntastic'
 Plugin 'pangloss/vim-javascript'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'yeaha/vim-php-cs-fixer'
 call vundle#end()
 
 filetype plugin indent on
@@ -169,12 +171,21 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
+let g:syntastic_php_checkers = ["php", "phpmd"]
+let g:syntastic_php_phpmd_exec = "~/bin/phpmd"
+let g:syntastic_php_phpmd_post_args = "~/ruleset.xml"
 
 " php syntax
 let php_sql_query = 1
 let php_html_in_string = 1
 let php_parent_error_close = 1
 let php_parent_error_open = 1
+
+" php-cs-fixer
+let g:php_cs_fixer_path = "~/bin/php-cs-fixer"
+let g:php_cs_fixer_level = "psr2"
+let g:php_cs_fixer_verbose = 0
+autocmd BufWritePost *.php call PhpCsFixerFixFile()
 
 " jshint
 let jshint2_read = 0
