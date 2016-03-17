@@ -31,6 +31,7 @@
         <priority>5</priority>
         <properties>
             <property name="ignorepattern" value="(^(__|set|get))i" />
+            <property name="maxmethods" value="20" />
         </properties>
     </rule>
 
