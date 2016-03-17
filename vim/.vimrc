@@ -185,8 +185,9 @@ let php_parent_error_open = 1
 " php-cs-fixer
 let g:php_cs_fixer_path = "~/bin/php-cs-fixer"
 let g:php_cs_fixer_level = "psr2"
+let g:php_cs_fixer_enable_default_mapping = 1
 let g:php_cs_fixer_verbose = 0
-autocmd FileWritePost *.php call PhpCsFixerFixFile()
+"autocmd BufWritePost *.php call PhpCsFixerFixFile()
 
 " jshint
 let jshint2_read = 0
