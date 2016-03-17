@@ -165,6 +165,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_enable_signs = 0
+let g:syntastic_enable_balloons = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
@@ -184,7 +186,7 @@ let php_parent_error_open = 1
 let g:php_cs_fixer_path = "~/bin/php-cs-fixer"
 let g:php_cs_fixer_level = "psr2"
 let g:php_cs_fixer_verbose = 0
-autocmd BufWritePost *.php call PhpCsFixerFixFile()
+autocmd FileWritePost *.php call PhpCsFixerFixFile()
 
 " jshint
 let jshint2_read = 0

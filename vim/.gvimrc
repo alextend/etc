@@ -1,4 +1,4 @@
-colorscheme darkspectrum
+colorscheme kernel
 
 :language en_US.UTF-8
 
@@ -8,7 +8,7 @@ set guitablabel=%N:%M%t
 set visualbell
 set ambiwidth=double
 set linespace=2
-set cursorline
+"set cursorline
 
 " vim-airline
 let g:airline_left_sep = '▶'
