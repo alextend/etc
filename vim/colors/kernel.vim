@@ -56,7 +56,7 @@ let g:colors_name="kernel"
         hi StatusLineNC term=bold cterm=bold,underline ctermfg=Gray  ctermbg=Black
         hi StatusLineNC term=bold gui=bold,underline guifg=Gray  guibg=Black
         hi LineNr       term=bold cterm=bold ctermfg=Black ctermbg=DarkGreen
-        hi LineNr       term=bold gui=bold guifg=Black guibg=DarkGreen
+        hi LineNr       term=bold gui=bold guifg=#008C00 guibg=Black
         hi SpecialKey	guifg=DarkGreen guibg=Black
         hi SpecialKey	ctermfg=DarkGreen ctermbg=Black
 
