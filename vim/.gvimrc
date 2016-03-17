@@ -1,18 +1,4 @@
-"colorscheme darkspectrum
-"colorscheme desert
-"colorscheme nicotine
-"colorscheme professional
-"colorscheme lucius
-"colorscheme hybrid
-
-"set background=dark
-"colorscheme solarized
-
-"let g:molokai_original = 1
-"colorscheme molokai
-
-colorscheme reloaded
-syntax off
+colorscheme kernel
 
 :language en_US.UTF-8
 
@@ -21,6 +7,8 @@ set guifont=Monaco:h12
 set guitablabel=%N:%M%t
 set visualbell
 set ambiwidth=double
+set linespace=2
+"set cursorline
 
 " vim-airline
 let g:airline_left_sep = '▶'

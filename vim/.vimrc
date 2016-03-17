@@ -14,9 +14,10 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/syntastic'
-Plugin 'pangloss/vim-javascript'
+Plugin 'othree/yajs.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'wakatime/vim-wakatime'
+Plugin 'tpope/vim-fugitive'
 Plugin 'yeaha/vim-php-cs-fixer'
 call vundle#end()
 
@@ -56,8 +57,6 @@ set foldnestmax=2
 set foldlevel=1
 set foldminlines=3
 
-autocmd FileType javascript call SetJsFolding()
-
 if exists('$TMUX') " Support resizing in tmux
     set ttymouse=xterm2
 endif
@@ -95,7 +94,7 @@ let g:ctrlp_working_path_mode=0
 let g:ctrlp_by_filename = 0
 let g:ctrlp_regexp = 1
 let g:ctrlp_max_depth = 10
-let g:ctrlp_max_files = 2000
+let g:ctrlp_max_files = 5000
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*        " Linux/MacOSX
 
 " youcompleteme plugin
@@ -166,6 +165,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_enable_signs = 0
+let g:syntastic_enable_balloons = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
@@ -185,7 +186,7 @@ let php_parent_error_open = 1
 let g:php_cs_fixer_path = "~/bin/php-cs-fixer"
 let g:php_cs_fixer_level = "psr2"
 let g:php_cs_fixer_verbose = 0
-autocmd BufWritePost *.php call PhpCsFixerFixFile()
+autocmd FileWritePost *.php call PhpCsFixerFixFile()
 
 " jshint
 let jshint2_read = 0
@@ -199,8 +200,3 @@ let g:go_highlight_structs = 1
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tab_nr = 0
-
-function SetJsFolding()
-    setlocal foldmethod=indent
-    setlocal foldnestmax=4
-endfunction
