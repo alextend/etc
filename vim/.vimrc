@@ -14,9 +14,10 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/syntastic'
-Plugin 'pangloss/vim-javascript'
+Plugin 'othree/yajs.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'wakatime/vim-wakatime'
+Plugin 'tpope/vim-fugitive'
 Plugin 'yeaha/vim-php-cs-fixer'
 call vundle#end()
 
@@ -56,8 +57,6 @@ set foldnestmax=2
 set foldlevel=1
 set foldminlines=3
 
-autocmd FileType javascript call SetJsFolding()
-
 if exists('$TMUX') " Support resizing in tmux
     set ttymouse=xterm2
 endif
@@ -95,7 +94,7 @@ let g:ctrlp_working_path_mode=0
 let g:ctrlp_by_filename = 0
 let g:ctrlp_regexp = 1
 let g:ctrlp_max_depth = 10
-let g:ctrlp_max_files = 2000
+let g:ctrlp_max_files = 5000
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*        " Linux/MacOSX
 
 " youcompleteme plugin
@@ -199,8 +198,3 @@ let g:go_highlight_structs = 1
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tab_nr = 0
-
-function SetJsFolding()
-    setlocal foldmethod=indent
-    setlocal foldnestmax=4
-endfunction
